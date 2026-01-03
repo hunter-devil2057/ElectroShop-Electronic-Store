@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroShop - Electronics Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>ElectroShop</h1>
+        <div class="user-info">
+            <span id="user-welcome">Welcome, Guest</span>
+            <button id="login-btn">Login</button>
+            <button id="register-btn">Register</button>
+            <button id="logout-btn" style="display:none;">Logout</button>
+            <button id="admin-btn" style="display:none;">Admin Panel</button>
+        </div>
+        <div class="cart-info">
+            <span>Cart: <span id="cart-count">0</span> items</span>
+            <button id="cart-btn">View Cart</button>
+        </div>
+    </header>
+
+    <section id="login-section" class="modal" style="display:none;">
+        <div class="modal-content">
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="Email">
+            <input type="password" id="login-pass" placeholder="Password">
+            <button id="do-login">Login</button>
+            <button class="close-modal">Close</button>
+            <p id="login-msg"></p>
+        </div>
+    </section>
+
+    <section id="register-section" class="modal" style="display:none;">
+        <div class="modal-content">
+            <h2>Register</h2>
+            <input type="email" id="reg-email" placeholder="Email">
+            <input type="password" id="reg-pass" placeholder="Password">
+            <button id="do-register">Register</button>
+            <button class="close-modal">Close</button>
+            <p id="reg-msg">Note: No real email verification (demo only)</p>
+        </div>
+    </section>
+
+    <section id="products-section">
+        <h2>Products</h2>
+        <div id="products-list" class="products-grid"></div>
+    </section>
+
+    <section id="admin-section" style="display:none;">
+        <h2>Admin Panel - Manage Products</h2>
+        <form id="admin-form">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="admin-name" placeholder="Product Name" required>
+            <input type="number" id="admin-price" placeholder="Price ($)" required>
+            <input type="number" id="admin-stock" placeholder="Stock Quantity" required>
+            <input type="url" id="admin-image" placeholder="Image URL" required>
+            <button type="submit" id="admin-save">Add Product</button>
+        </form>
+        <div id="admin-list" class="products-grid"></div>
+    </section>
+
+    <section id="cart-section" class="modal" style="display:none;">
+        <div class="modal-content">
+            <h2>Your Cart</h2>
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <p>Total: $<span id="cart-total">0</span></p>
+            <button id="checkout-btn">Checkout (Demo)</button>
+            <button class="close-modal">Close</button>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
